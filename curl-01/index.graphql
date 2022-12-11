@@ -1,0 +1,26 @@
+type ResultsEntry {
+  category: [String]
+  content: String
+  country: [String]
+  creator: [String]
+  description: String
+  image_url: String
+  keywords: [String]
+  language: String
+  link: String
+  pubDate: String
+  source_id: String
+  title: String
+  video_url: JSON
+}
+type Root1 {
+  nextPage: Int
+  results: [ResultsEntry]
+  status: String
+  totalResults: Int
+}
+
+type Query {
+  myQuery1(apikey: String, category: String): Root
+    @rest(endpoint: "https://newsdata.io/api/1/news")
+}

@@ -17,20 +17,20 @@ function SearchBox() {
   return (
     <form
       onSubmit={handleSearch}
-      className="max-w-6xl mx-auto flex justify-between items-center px-5"
+      className="max-w-6xl mx-auto flex justify-between items-center"
     >
       <input
         type="text"
         value={searchKeyword}
         onChange={(e) => setSearch(e.target.value)}
         placeholder="Search Keywords..."
-        className="w-full h-14 rounded-sm placeholder-gray-500 text-gray-500 outline-none flex-1 dark:text-orange-400"
+        className="w-full h-14 rounded-sm placeholder-gray-500 text-gray-500 outline-none flex-1 dark:text-orange-400 px-5"
       />
 
       <button
         type="submit"
         disabled={!searchKeyword}
-        className="text-orange-400 disabled:text-gray-400"
+        className="text-orange-400 disabled:text-gray-400  px-5"
       >
         Search
       </button>

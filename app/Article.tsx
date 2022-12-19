@@ -1,10 +1,12 @@
+// import LiveTimestamp from './LiveTimestamp';
+import ReadMoreButton from './ReadMoreButton';
+
 type Props = {
   article: Article;
 };
-
 function Article({ article }: Props) {
   return (
-    <article className="bg-slate-100 dark:bg-slate-800 flex flex-col rounded-lg shadow-sm hover:scale-105 hover:shadow-lg hover:bg-slate-200 dark:hover:bg-slate-900 transition-all duration-200 ease-out">
+    <article className="flex flex-col bg-slate-100 dark:bg-slate-800  rounded-lg shadow-md hover:scale-105 hover:shadow-lg hover:bg-slate-200 transition-all duration-200 ease-out">
       {article.image && (
         <img
           src={article.image}
@@ -15,14 +17,16 @@ function Article({ article }: Props) {
       <div className="flex-1 flex flex-col">
         <div className="flex-1 flex flex-col p-5">
           <h2 className="font-bold font-serif">{article.title}</h2>
-          <section className="mt-2 flex-1">
-            <p className="text-xs line-clamp-">{article.description}</p>
+          <section className="flex-1 mt-2">
+            <p className="text-xs line-clamp-6">{article.description}</p>
           </section>
           <footer className="text-xs text-right ml-auto flex space-x-1 pt-5 italic text-gray-400">
-            <p className="text-gray-500 mt-2">{article.source} -</p>
-            <p className="text-gray-500 mt-2">{article.published_at}</p>
+            <p>{article.source} -</p>
+            <p>{/* <LiveTimestamp time={article.published_at} /> */}</p>
           </footer>
         </div>
+        {/* READ more button */}
+        <ReadMoreButton article={article} />
       </div>
     </article>
   );

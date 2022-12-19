@@ -16,17 +16,17 @@ function ArticlePage({ searchParams }: Props) {
 
   return (
     <article>
-      <section className="flex flex-col lg:flex-row pb-24 px-0 lg:px-10">
+      <section className="flex flex-wrap flex-col lg:flex-row pb-24 px-0 lg:px-10 pt-20">
         {article.image && (
           <img
-            className="h-50 max-w-md mx-auto md:max-w-lg lg:max-w-xl object-cover rounded-lg shadow-md"
+            className="min-h-fit h-auto w-3/4 pb-10 max-w-md mx-auto md:max-w-lg lg:max-w-xl object-cover rounded-lg shadow-md"
             src={article.image}
             alt={article.title}
           />
         )}
 
         <div className="px-10">
-          <h1 className="headerTitle px-0 no-underline pb-2">
+          <h1 className="headerTitle px-0 no-underline pb-5">
             {article.title}
           </h1>
           <div className="flex divide-x-2 space-x-4">
@@ -35,6 +35,7 @@ function ArticlePage({ searchParams }: Props) {
               Source: {article.source || 'unknown'}
             </h2>
             <p className="pl-4">
+              {article.published_at}
               {/* <LiveTimestamp time={article.published_at} /> */}
             </p>
           </div>

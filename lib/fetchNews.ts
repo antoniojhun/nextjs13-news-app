@@ -42,6 +42,11 @@ const fetchNews = async (
     }
   `;
   // Fetch function with Next.js 13 caching
+  const decodeString = (str) => {
+    return str.replace(/\\u[\dA-F]{4}/gi, (unicode) => {
+      return String.fromCharCode(parseInt(unicode.replace(/\\u/g, ''), 16));
+    });
+  };
   const res = await fetch(
     'https://villagesell.stepzen.net/api/lumbering-beetle/__graphql',
     {
@@ -52,14 +57,17 @@ const fetchNews = async (
         'Content-Type': 'application/json',
         Authorization: `Apikey ${process.env.STEPZEN_API_KEY}`,
       },
-      body: JSON.stringify({
-        query,
-        variables: {
-          access_key: process.env.NEWS_API_KEY,
-          categories: category,
-          keywords: keywords,
-        },
-      }),
+
+      body: decodeString(
+        JSON.stringify({
+          query,
+          variables: {
+            access_key: process.env.NEWS_API_KEY,
+            categories: category,
+            keywords: keywords,
+          },
+        })
+      ),
     }
   );
 

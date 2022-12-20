@@ -19,7 +19,7 @@ function ArticlePage({ searchParams }: Props) {
       <section className="flex flex-wrap flex-col lg:flex-row pb-24 px-0 lg:px-10 pt-20">
         {article.image && (
           <img
-            className="min-h-fit h-auto w-3/4 pb-10 max-w-md mx-auto md:max-w-lg lg:max-w-xl object-cover rounded-lg shadow-md"
+            className="min-h-fit h-auto w-72 mb-10 max-w-md mx-auto md:max-w-lg lg:max-w-xl object-cover rounded-lg shadow-md"
             src={article.image}
             alt={article.title}
           />

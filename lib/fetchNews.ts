@@ -41,12 +41,14 @@ const fetchNews = async (
       }
     }
   `;
-  // Fetch function with Next.js 13 caching
   const decodeString = (str) => {
-    return str.replace(/\\u[\dA-F]{4}/gi, (unicode) => {
-      return String.fromCharCode(parseInt(unicode.replace(/\\u/g, ''), 16));
-    });
+    return str
+      .replace(/\\u[\dA-F]{4}/gi, (unicode) => {
+        return String.fromCharCode(parseInt(unicode.replace(/\\u/g, ''), 16));
+      })
+      .replace(/&amp;/g, '&');
   };
+  // Fetch function with Next.js 13 caching
   const res = await fetch(
     'https://villagesell.stepzen.net/api/lumbering-beetle/__graphql',
     {

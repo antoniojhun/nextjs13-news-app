@@ -18,7 +18,9 @@ function Article({ article }: Props) {
         <div className="flex-1 flex flex-col p-5">
           <h2 className="font-bold font-serif">{article.title}</h2>
           <section className="flex-1 mt-2">
-            <p className="text-xs line-clamp-6">{article.description}</p>
+            <p className="font-sans text-xs line-clamp-6">
+              {article.description}
+            </p>
           </section>
           <footer className="text-xs text-right ml-auto flex space-x-1 pt-5 italic text-gray-400">
             <p>{article.source} -</p>

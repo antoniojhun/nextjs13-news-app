@@ -7,7 +7,11 @@ module.exports = {
   ],
   darkMode: 'class',
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['var(--font-mulish)', 'sans-serif'],
+      },
+    },
   },
   plugins: [require('@tailwindcss/line-clamp')],
 };

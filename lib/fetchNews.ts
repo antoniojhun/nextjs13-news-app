@@ -41,7 +41,7 @@ const fetchNews = async (
       }
     }
   `;
-  const decodeString = (str) => {
+  const decodeString = (str: string) => {
     return str
       .replace(/\\u[\dA-F]{4}/gi, (unicode) => {
         return String.fromCharCode(parseInt(unicode.replace(/\\u/g, ''), 16));

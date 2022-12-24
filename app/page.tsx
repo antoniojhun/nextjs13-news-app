@@ -12,7 +12,6 @@ async function Homepage() {
 
   return (
     <div>
-      {/* NewsList news */}
       <NewsList news={news} />
     </div>
   );

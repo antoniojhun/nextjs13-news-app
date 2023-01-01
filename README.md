@@ -1,6 +1,9 @@
-This is a Next.js 13 + Tailwind CSS - Dynamic News Feed project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a Next.js 13 + Tailwind CSS 3 - Dynamic News Feed project.
 
-Deployed in Vercel
+News from MediaStack: [`MediaStack`](https://mediastack.com)
+Stepzen GraphQL API: [`Stepzen GraphQL API`](https://stepzen.com)
+
+Demo: Deployed in Vercel - [`The Antonios News`](https://nextjs13-news-app-antoniojhun.vercel.app)
 
 Using Mediastack to pull news articles from different sources
 
